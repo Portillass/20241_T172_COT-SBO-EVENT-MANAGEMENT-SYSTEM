@@ -1,0 +1,17 @@
+{
+  "name": "20241_t171_cot-sbo-event-management-system",
+  "version": "1.0.0",
+  "description": "System Description: The COT SBO Event Management System is a web-based platform designed to enhance the event management processes of the College of Technologies (COT) Student Body Officers (SBO).\r The system aims to streamline event planning, attendance tracking, and performance reporting, providing a centralized solution that replaces manual processes often associated with inefficiency and errors.",
+  "main": "app.js",
+  "scripts": {
+   "startDev":"nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
