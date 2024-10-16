@@ -7,10 +7,10 @@ app.use(bodyParser.json());
 
 // Root endpoint
 app.get('/', (req, res) => {
-  res.send('ADVISER, SBO OFFICER, AND EVENT MANAGEMENT SYSTEM');
+  res.send('COT-SBO EVENT MANAGEMENT SYSTEM');
 });
 
-//ADVISER ROUTES //
+//===============ADVISER===============//
 
 // Add a new adviser
 app.post();
@@ -30,7 +30,7 @@ app.delete();
 // Update an adviser by ID
 app.patch();
 
-/////////////////////// SBO OFFICER ROUTES //////////////////////////
+//========================SBO OFFICER =====================//
 
 // Add a new SBO officer
 app.post();
@@ -50,7 +50,7 @@ app.delete();
 // Update an SBO officer by ID
 app.patch();
 
-/////////////////////// STUDENT EVENT ROUTES //////////////////////////
+//======================== STUDENT=======================//
 
 // Add a new event (For Advisers or Officers only)
 app.post();
@@ -63,7 +63,5 @@ app.get();
 
 // Get event by name (Students can view)
 app.get();
-
-/////////////////////// START SERVER //////////////////////////
 
 app.listen(3000);
