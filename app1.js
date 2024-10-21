@@ -12,56 +12,64 @@ app.get('/', (req, res) => {
 
 //===============ADVISER===============//
 
-// Add a new adviser
+// Add a new SBO Officer
 app.post();
-
-// Get all advisers
+// View Event
 app.get();
 
-// Get adviser by ID
+// Downlaod all attendance
 app.get();
 
-// Get adviser by name
-app.get();
+// Edit  event 
+app.patch();
 
-// Delete an adviser by ID
+// Approved event 
+app.patch();
+
+// Disapproved event 
+app.patch();
+
+// Delete SBO Officer
 app.delete();
 
-// Update an adviser by ID
-app.patch();
+// Delete an event
+app.delete();
 
 //========================SBO OFFICER =====================//
 
-// Add a new SBO officer
+// Add a new event
 app.post();
 
-// Get all SBO officers
+// Get all events (SBO Officer can view and manage)
 app.get();
 
-// Get SBO officer by ID
+// Get event by ID (SBO Officer can view and manage)
 app.get();
 
-// Get SBO officer by name
+// Get event by name (SBO Officer can view and manage)
 app.get();
 
-// Delete an SBO officer by ID
+// Delete an event (SBO Officer only)
 app.delete();
 
-// Update an SBO officer by ID
+// Update an event (SBO Officer only)
 app.patch();
 
+
+
+
+// thisis the mobile phone that only they can scan qr code 
 //======================== STUDENT=======================//
 
-// Add a new event (For Advisers or Officers only)
-app.post();
-
-// Get all events (Students can view)
+// can Scan Qr code 
 app.get();
 
-// Get event by ID (Students can view)
+// Get all events
 app.get();
 
-// Get event by name (Students can view)
+// Get event by time and date
 app.get();
 
+
+// 
 app.listen(3000);
