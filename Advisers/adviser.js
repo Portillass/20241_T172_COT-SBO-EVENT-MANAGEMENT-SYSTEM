@@ -27,6 +27,6 @@ router.get('/events/:eventId', async (req, res) => {
   }
 });
 
-// ... (Implement other Adviser routes)
+
 
 module.exports = router;
