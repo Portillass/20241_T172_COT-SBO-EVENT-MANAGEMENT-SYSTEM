@@ -8,9 +8,17 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  optimizeDeps: {
+    include: [
+      // List of dependencies to pre-bundle
+    ],
+  },
   build: {
     rollupOptions: {
       input: 'index.html',
     },
   },
+  client: {
+    port: 3000,
+  }
 });
