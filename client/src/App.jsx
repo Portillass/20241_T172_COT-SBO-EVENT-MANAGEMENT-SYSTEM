@@ -6,7 +6,7 @@ import EventList from './components/EventList';
 import AttendanceTracker from './components/AttendanceTracker';
 import FeedbackForm from './components/FeedbackForm';
 import Login from './components/Login';
-import './App.css'; // Add this line
+import './App.css';
 
 function App() {
     return (
