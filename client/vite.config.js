@@ -5,20 +5,21 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': 'src', // Updated path alias
     },
   },
   optimizeDeps: {
     include: [
-      // List of dependencies to pre-bundle
+      'react', // Add necessary dependencies here
+      'react-dom',
     ],
   },
   build: {
     rollupOptions: {
-      input: 'index.html',
+      input: 'index.html', // Ensure this points to your entry HTML
     },
   },
-  client: {
-    port: 3000,
-  }
+  server: {
+    port: 3000, // Move port configuration under server
+  },
 });
