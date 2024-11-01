@@ -1,13 +1,27 @@
 const mongoose = require('mongoose');
 
+// Define the feedback schema
 const feedbackSchema = new mongoose.Schema({
-  feedback_id: String,
-  event_id: String,
-  user_id: String,
-  rating: Number,
-  comments: String,
-  created_at: { type: Date, default: Date.now }
+  user_id: {
+    type: String,
+    required: true,
+  },
+  event_id: {
+    type: String,
+    required: true,
+  },
+  feedback: {
+    type: String,
+    required: true,
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('Feedback', feedbackSchema);
-    
+// Create the model
+const FeedbackModel = mongoose.model('feedback', feedbackSchema);
+
+// Export the model
+module.exports = FeedbackModel;
