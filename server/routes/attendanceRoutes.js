@@ -1,11 +1,19 @@
 const express = require('express');
-const router = express.Router();
-const attendanceController = require('../controllers/attendanceController');
+const {
+  getAllAttendanceRecords,
+  getAttendanceById,
+  createAttendance,
+  updateAttendance,
+  deleteAttendance,
+} = require('../controllers/attendanceController');
 
-router.get('/', attendanceController.getAllAttendanceRecords);
-router.get('/:id', attendanceController.getAttendanceById);
-router.post('/', attendanceController.createAttendance);
-router.put('/:id', attendanceController.updateAttendance);
-router.delete('/:id', attendanceController.deleteAttendance);
+const router = express.Router();
+
+// Define the routes
+router.get('/', getAllAttendanceRecords); // GET all attendance records
+router.get('/:id', getAttendanceById); // GET attendance record by ID
+router.post('/', createAttendance); // Create a new attendance record
+router.put('/:id', updateAttendance); // Update an attendance record by ID
+router.delete('/:id', deleteAttendance); // Delete an attendance record by ID
 
 module.exports = router;

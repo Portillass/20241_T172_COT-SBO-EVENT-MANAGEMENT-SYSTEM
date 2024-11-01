@@ -1,10 +1,9 @@
-const Attendance = require('../models/attendanceModel');
-
+const AttendanceModel = require('../models/AttendanceModel'); // Ensure this matches the model file
 
 // Get all attendance records
 exports.getAllAttendanceRecords = async (req, res) => {
   try {
-    const attendanceRecords = await Attendance.find();
+    const attendanceRecords = await AttendanceModel.find(); // Use AttendanceModel instead of Attendance
     res.json(attendanceRecords);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -14,7 +13,7 @@ exports.getAllAttendanceRecords = async (req, res) => {
 // Get an attendance record by ID
 exports.getAttendanceById = async (req, res) => {
   try {
-    const attendance = await Attendance.findById(req.params.id);
+    const attendance = await AttendanceModel.findById(req.params.id); // Use AttendanceModel
     if (!attendance) {
       return res.status(404).json({ message: "Attendance record not found" });
     }
@@ -26,7 +25,7 @@ exports.getAttendanceById = async (req, res) => {
 
 // Create a new attendance record
 exports.createAttendance = async (req, res) => {
-  const attendance = new Attendance(req.body);
+  const attendance = new AttendanceModel(req.body); // Use AttendanceModel
   try {
     const newAttendance = await attendance.save();
     res.status(201).json(newAttendance);
@@ -38,10 +37,10 @@ exports.createAttendance = async (req, res) => {
 // Update an attendance record by ID
 exports.updateAttendance = async (req, res) => {
   try {
-    const updatedAttendance = await Attendance.findByIdAndUpdate(
+    const updatedAttendance = await AttendanceModel.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true, runValidators: true }  // runValidators ensures that schema validation is applied on updates
+      { new: true, runValidators: true } // runValidators ensures that schema validation is applied on updates
     );
     if (!updatedAttendance) {
       return res.status(404).json({ message: "Attendance record not found" });
@@ -55,7 +54,7 @@ exports.updateAttendance = async (req, res) => {
 // Delete an attendance record by ID
 exports.deleteAttendance = async (req, res) => {
   try {
-    const attendance = await Attendance.findByIdAndDelete(req.params.id);
+    const attendance = await AttendanceModel.findByIdAndDelete(req.params.id); // Use AttendanceModel
     if (!attendance) {
       return res.status(404).json({ message: "Attendance record not found" });
     }
