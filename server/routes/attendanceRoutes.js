@@ -10,10 +10,10 @@ const {
 const router = express.Router();
 
 // Define the routes
-router.get('/', getAllAttendanceRecords); // GET all attendance records
-router.get('/:id', getAttendanceById); // GET attendance record by ID
-router.post('/', createAttendance); // Create a new attendance record
-router.put('/:id', updateAttendance); // Update an attendance record by ID
+router.get('/', getAllAttendanceRecords);
+router.get('/:id', getAttendanceById); 
+router.post('/', createAttendance); 
+router.put('/:id', updateAttendance);
 router.delete('/:id', deleteAttendance); // Delete an attendance record by ID
 
 module.exports = router;
