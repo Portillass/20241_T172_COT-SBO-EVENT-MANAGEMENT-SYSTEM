@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -37,33 +36,3 @@ function App() {
 }
 
 export default App;
-=======
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdminDashboard from './components/AdminDashboard';
-import EventManager from './components/EventManager';
-import EventList from './components/EventList';
-import AttendanceTracker from './components/AttendanceTracker';
-import FeedbackForm from './components/FeedbackForm';
-import Login from './components/Login';
-import './App.css';
-
-function App() {
-    return (
-        <Router>
-            <div className="App">
-                <Switch>
-                    <Route path="/admin" component={AdminDashboard} />
-                    <Route path="/manage-events" component={EventManager} />
-                    <Route path="/events" component={EventList} />
-                    <Route path="/attendance" component={AttendanceTracker} />
-                    <Route path="/feedback" component={FeedbackForm} />
-                    <Route path="/login" component={Login} />
-                </Switch>
-            </div>
-        </Router>
-    );
-}
-
-export default App; 
->>>>>>> fd3adac73c0d8eab1539c56a54cb81a9b42c874f
