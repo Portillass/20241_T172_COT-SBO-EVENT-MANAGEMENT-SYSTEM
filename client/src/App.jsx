@@ -1,3 +1,63 @@
+<<<<<<< HEAD
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { CalendarProvider } from './context/CalendarContext';
+import PrivateRoute from './components/PrivateRoute';
+import LandingPage from './components/LandingPage';
+import AdminDashboard from './components/dashboards/AdminDashboard';
+import OfficerDashboard from './components/dashboards/officer/OfficerDashboard';
+import StudentDashboard from './components/dashboards/student/StudentDashboard';
+import OAuth2Callback from './pages/OAuth2Callback';
+import Loading from './components/Loading';
+import Login from './components/Login';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+function App() {
+  return (
+    <CalendarProvider>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/oauth2callback" element={<OAuth2Callback />} />
+        <Route
+          path="/dashboard/admin"
+          element={
+            <PrivateRoute allowedRoles={['admin']}>
+              <AdminDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/officer"
+          element={
+            <PrivateRoute allowedRoles={['officer']}>
+              <OfficerDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dashboard/student"
+          element={
+            <PrivateRoute>
+              <StudentDashboard />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </CalendarProvider>
+=======
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,6 +92,7 @@ function App() {
         <Route path="/edit-student/:studentId" element={<EditStudent />} /> {/* Page to Edit a Student */}
       </Routes>
     </BrowserRouter>
+>>>>>>> QA
   );
 }
 

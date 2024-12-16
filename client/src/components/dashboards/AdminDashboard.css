@@ -1,0 +1,100 @@
+.welcome-banner {
+  padding: 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.moving-text {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+  letter-spacing: 2px;
+}
+
+.moving-text::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  animation: line 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+  }
+}
+
+@keyframes line {
+  0%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.dashboard-nav-pills .nav-link {
+  color: #495057;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+}
+
+.dashboard-nav-pills .nav-link:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.dashboard-nav-pills .nav-link.active {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-content {
+  padding: 1.5rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.dashboard-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
